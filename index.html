@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Invitation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: red;
+            font-size: 2.5rem;
+        }
+        .gif {
+            width: 200px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+            position: absolute;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            justify-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            animation: bounceIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes floatUp {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" class="gif" alt="Cute Cat">
+        <div class="buttons">
+            <button class="btn yes" onclick="accept()">Yes</button>
+            <button class="btn no" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+    <script>
+        function accept() {
+            document.body.innerHTML = `<h1>Yay! I love you! ❤️</h1>
+                                       <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" class="gif">
+                                       <div class='gallery'>
+                                           <img src="https://scontent.fmnl8-4.fna.fbcdn.net/v/t1.15752-9/476057031_527820343673602_3837968195369249084_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFaeo0okDhy-KAyH8ul5g7M4CFwhMIkCwLgIXCEwiQLAtJ12MGV-6QPo__ltqDwouji8uP2HeEn8NgvXQ3_VgSK&_nc_ohc=pTMeniREEzQQ7kNvgEdO1LU&_nc_oc=AdgjU3puZ2bfhjv8-2zFYTpgecXC03Lo2-Oe7vVB9GUSjSCm64muKNl3XHjJtYzWkQ4&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&oh=03_Q7cD1gE_JLYlPTgpy6UnQrGLgtuD9AtkR1q-6CtLJN995Sm9wQ&oe=67D4D65A">
+                                           <img src="https://scontent.fmnl8-4.fna.fbcdn.net/v/t1.15752-9/479772078_1121029536387369_2681268670581413577_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEcL5dSMwP86GVQgkewDESffY01FEQBZ5N9jTUURAFnk2TQCHKitzAHSXiDW8hCdvoMzngQzxNTh-TV8mVavuTe&_nc_ohc=5SRocoaaMI4Q7kNvgErQYdW&_nc_oc=AdipKqYwan0wU4T-F6gE2uGHPJhG4DWsjJ_-vct2QUSl-EbLepJf5AbW-vKjTRuvYxA&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&oh=03_Q7cD1gGF8YX4-gw7_-IFqYuPS6fkYMHhNY8YbscZyyJWaEHoAQ&oe=67D4BE35">
+                                           <img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/476425729_1193770212380303_6541332878975672569_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFJG5vFlZqWWOUMMnoDsWWTH5EFoO83bPofkQWg7zds-hCFjKMWHmkQn9o2cgPxP9OOvkC5S1k11awxBeRue_Ss&_nc_ohc=0DxaIq068ScQ7kNvgH9URfY&_nc_oc=Adi5aXJoCJBu-7-_41-XfL0_T07sDb6Su_KxqgC8aimPeb35ywkWev_mRBDtquyjp8k&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&oh=03_Q7cD1gHQ5JkEasVQvrFOCywbeDicvpTRrWYaSvUO_RLrixxIHQ&oe=67D4A2F0">
+                                           <img src="https://scontent.fmnl8-3.fna.fbcdn.net/v/t1.15752-9/476326805_1261298731615201_2705478597505801845_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEW8D7eBAtW-iNVKRDZWhuV5HiNfA2R_WPkeI18DZH9Y0V99_tI8xEjleLpo9IpuuHJauiAKepR7hCS2o07DcYr&_nc_ohc=dSKA_WvXwS4Q7kNvgGUKMtV&_nc_oc=AdjcCvjZwMc_vwd16LeV26ALCeI8ZmqIVepIRBAQfPbuuJe_--SwYYWvsxPT0JPIfFA&_nc_zt=23&_nc_ht=scontent.fmnl8-3.fna&oh=03_Q7cD1gFLddek5gTWwyvGchhdMcCNJjztqQhuVHJcCO8mWAl_0Q&oe=67D4B98E">
+                                           <img src="https://scontent.fmnl8-6.fna.fbcdn.net/v/t1.15752-9/475962748_1035264035103820_1015341099968540587_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeELKofDoOzkOj2AIqSDgmtJbVF4pgbLV2JtUXimBstXYs4p_4JD4-QDYhRJGir4HpNRIHI4fSDsWpLdpulKzkpw&_nc_ohc=7edbjyas-9AQ7kNvgGknNkc&_nc_oc=Adg_CTCvr9edqb8lwEaukMTDU_tJEPdglvnAAQ6Fqo6wLTMr8dEOA8VcmJB7bPa6pAQ&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&oh=03_Q7cD1gEDQOzOI6mmIz9QKohqGkh2-7_rwtUJiTTyhx13-OBD1g&oe=67D4CCA2">
+                                           <img src="https://scontent.fmnl8-6.fna.fbcdn.net/v/t1.15752-9/439928465_1432886314036692_3252484521312311859_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEb7CbxTflZt4ajQlLJz2mhlskZhIgTOMqWyRmEiBM4yqG86xQd5QH1yrieq6HcKM57-dHbLziR1tHTSqBLKPms&_nc_ohc=rflGSkwFxZQQ7kNvgH1qQmN&_nc_oc=Adiu0ZoFg91dz9UhcQUPqWCo-wa1vbbYkJ1MslCiyYyG_AMAK1e4EaCGNdXQXOvCOO8&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&oh=03_Q7cD1gGlSNKI-FSphQjnF3KdHYjqRXc8BtKc3is00Bal75ubAg&oe=67D4AD34">
+                                       </div>`;
+        }
+        function moveNoButton() {
+            let noBtn = document.querySelector('.no');
+            let maxX = window.innerWidth - noBtn.clientWidth;
+            let maxY = window.innerHeight - noBtn.clientHeight;
+            let newX = Math.random() * maxX;
+            let newY = Math.random() * maxY;
+            noBtn.style.left = `${newX}px`;
+            noBtn.style.top = `${newY}px`;
+        }
+    </script>
+</body>
+</html>
